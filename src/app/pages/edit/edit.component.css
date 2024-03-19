@@ -1,0 +1,47 @@
+.close-icon {
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 10px;
+    }
+    
+.close-icon svg {
+      fill: #333; 
+    }
+    
+.close-icon svg:hover {
+      fill: #ff0000; 
+    }
+   h {
+        font-size:medium;
+        padding: 10px;
+        margin: 5px;
+    }
+    .error-field {
+        color: #dc3545; 
+        font-size: 12px; 
+      }
+    .navbar {
+        background-color: #28a745; 
+      }
+      .navbar-brand {
+        color: #fff;
+        font-size: 23px; 
+        margin: 5px;
+        padding: 10px;
+      }
+      .container-fluid {
+        margin-top: 20px; 
+      }
+      .mat-form-field {
+        width: 100%;
+      }
+      .add-button {
+        margin-top: 20px; 
+      }
+      .input-align {
+        display: flex;
+        align-items: center; 
+      }
+      .mat-datepicker-toggle {
+        max-width: 80%;
+      }

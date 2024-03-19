@@ -1,0 +1,35 @@
+.bi-trash {
+    
+    color: red;
+}
+.bi-pencil-square{
+    color: rgb(25, 25, 236);
+}
+.bi-trash:hover{
+    color: white;
+}
+.bi-pencil-square:hover{
+    color: white;
+}
+.container-fluid{
+    width: 95vw;
+}
+.table {
+    width: 95vw;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    padding: 0.50rem;
+    vertical-align: middle;
+    vertical-align: top;
+    border-top: 1px solid; 
+    text-align: left;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #f8f9fa;
+  }

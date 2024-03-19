@@ -1,0 +1,175 @@
+<form [formGroup]="editForm" >
+    <div class="row">
+      <nav class="navbar navbar-light bg-success">
+        <div class="container-fluid">
+          <div class="navbar-brand mb-0 h1">Add Information</div>
+          <div>
+            <i class="bi bi-x-lg close-icon" (click)="closeFuc()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+              </svg></i>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="row p-2 ">
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Yard</mat-label>
+          <select matNativeControl required formControlName="yard" name="yard">
+            <option value="HK">HK</option>
+            <option value="AU">AU</option>
+            <option value="OT">OT</option>
+          </select>
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Liner Name</mat-label>
+          <select matNativeControl required formControlName="linerName" name="linerName">
+            <option value="JACK">JACK</option>
+            <option value="SAMSON">SAMSON</option>
+            <option value="JOHN">JOHN</option>
+          </select>
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <mat-form-field class="example-full-width">
+          <mat-label>Reference Number*</mat-label>
+          <input  matInput formControlName="referenceNumber"  name="referenceNumber"  >
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Types*</mat-label>
+          <select matNativeControl required formControlName="type" name="type">
+            <option value="Type 1">Type 1</option>
+            <option value="Type 2">Type 2</option>
+          </select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Booking Date*</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="bookingDate" name=" bookingDate">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Booking Validity*</mat-label>
+          <input matInput [matDatepicker]="picker1" formControlName="bookingValidity" name=" bookingValidity" min="bookingValidity">
+          <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <mat-form-field class="example-full-width">
+          <mat-label>Release To</mat-label>
+          <input matInput formControlName="releseTo" name="releseTo">
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Vessel Carrier*</mat-label>
+          <select matNativeControl required formControlName="vesselCarrier" name="vesselCarrier">
+            <option value="MAERSK">MAERSK</option>
+            <option value="CMGCM">CMGCM</option>
+            <option value="MSC">MSC</option>
+          </select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row p-2">
+      <div class="col-3">
+        <mat-form-field class="example-full-width">
+          <mat-label>Vessel Name*</mat-label>
+          <input matInput formControlName="vesselName" name="vesselName">
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <mat-form-field class="example-full-width">
+          <mat-label>Voyage Number*</mat-label>
+          <input matInput formControlName="voyageNumber" name="voyageNumber">
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Arrival Date*</mat-label>
+          <input matInput [matDatepicker]="picker2" formControlName="arrivalDate">
+          <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <mat-form-field>
+          <mat-label>Departure Date*</mat-label>
+          <input matInput [matDatepicker]="picker3" formControlName="departureDate" min="todayDate">
+          <mat-datepicker-toggle matIconSuffix [for]="picker3"></mat-datepicker-toggle>
+          <mat-datepicker #picker3></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row p-2">
+      <div class="col-3">
+        <mat-form-field class="example-full-width">
+          <mat-label>Loading Port</mat-label>
+          <input matInput formControlName="loadingPort" name="loadingPort">
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <mat-form-field class="example-full-width">
+          <mat-label>Discharge Port</mat-label>
+          <input matInput formControlName="dischargePort" name="dischargePort">
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <mat-form-field class="example-full-width">
+          <mat-label>Destination</mat-label>
+          <input matInput formControlName="distination" name="distination">
+        </mat-form-field>
+      </div>
+      <div class="col-3"> <mat-form-field>
+          <mat-label>Status*</mat-label>
+          <select matNativeControl required formControlName="status">
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+            <option value="Expired">Expired</option>
+          </select>
+        </mat-form-field></div>
+    </div>
+    <div class="row p-2">
+      <div class="col-3">
+        <mat-form-field class="example-full-width">
+          <mat-label>Out Contract</mat-label>
+          <input matInput formControlName="octContract" name="octContract">
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <mat-form-field class="example-full-width">
+          <mat-label>BL Number</mat-label>
+          <input matInput formControlName="blNumber" name="blNumber" maxlength="10">
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Remarks</mat-label>
+          <input matInput formControlName="remarks" name="remarks">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-3"></div>
+      <div class="col-3"></div>
+      <div class="col-1">
+        <button class="btn btn-success add-button " type="submit" (click)="editFormfun()">Save</button>
+      </div>
+      <div class="col-1 ">
+        <button class="btn btn-danger add-button "type="submit" (click)="closeFuc()">cancel</button>
+      </div>
+    </div>
+  </form>
