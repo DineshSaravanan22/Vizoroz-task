@@ -172,15 +172,19 @@ ngOnInit(){
 //  edit function
 
 editFormfun(){
-  if (!this.isDataChanged()) {
+  if (!this.isDataChanged()&&this.userForm.valid) {
   this.mainService.editValue(this.data.id,this.userForm.value).subscribe((result)=>{
    this.dialogRef.close(result)
    this.toaster.success("Edited Successfully")
  })
 }
 else{
-  this.dialogRef.close()
-  this.toaster.warning("Nothing to change")
+  if(this.userForm.valid){
+    this.dialogRef.close()
+    this.toaster.warning("Nothing to change")
+  }else{
+    this.showAlert('Please fill out all required fields');
+  }
 }
  }
  isDataChanged(): boolean {
@@ -274,9 +278,6 @@ onYard(){
  if (this.userForm.get('yard')?.value === 'HK') {
    this.userForm.get('referenceNumber')?.disable();
    this.userForm.get('referenceNumber')?.setValue('abcd123456');
- }else{
-   this.userForm.get('referenceNumber')?.enable();
-   this.userForm.get('referenceNumber')?.setValue('');
  }
 }
 

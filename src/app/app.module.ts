@@ -27,6 +27,8 @@ import { ListtableComponent } from './pages/listtable/listtable.component';
 import { CommomformComponent } from './pages/commomform/commomform.component';
 import { SavebuttonComponent } from './pages/savebutton/savebutton.component';
 import { CancelbuttonComponent } from './pages/cancelbutton/cancelbutton.component';
+import { AgGridAngular } from 'ag-grid-angular';
+
 
 @NgModule({
   declarations: [
@@ -53,6 +55,7 @@ import { CancelbuttonComponent } from './pages/cancelbutton/cancelbutton.compone
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    AgGridAngular,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,

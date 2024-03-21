@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { EditComponent } from './pages/edit/edit.component';
 import { ConfirmationDialogComponent } from './pages/confirmation-dialog/confirmation-dialog.component';
 import { ChangeDetectorRef } from '@angular/core';
+import { ColDef } from 'ag-grid-community';
+
 
 @Component({
   selector: 'app-root',
@@ -14,6 +16,7 @@ import { ChangeDetectorRef } from '@angular/core';
 })
 export class AppComponent {
   listData: { [key: string]: any }={};
+  gridData:any[]=[];
   showdataTable:boolean =true;
   listId:any;
   deleteId:any;
@@ -23,6 +26,8 @@ export class AppComponent {
   ngOnInit(){
 
     this.getData();
+    this.gridDataFun();
+
   }
   getData(){
     this.mainService.getData().subscribe((result)=>{
@@ -55,6 +60,24 @@ export class AppComponent {
       // this.listData.push(...result);
     });
   }
+  colDefs: ColDef[] = [
+    { field: "yard" },
+    { field: "linerName" },
+    { field: "Reference Number" },
+    { field: "type" }
+  ];
+   gridDataFun(){
+    this.mainService.getData().subscribe((result)=>{
+      console.log(result);
+      if(result){
+        this.gridData = Object.keys(result).map(key => ({
+          id: key,
+          ...result[key]
+      }));
+      }
+      
+    })
+   }
   updateView(): void {
   this.cdr.detectChanges();
 }
@@ -84,6 +107,7 @@ export class AppComponent {
     deleteFormPoup.afterClosed().subscribe((res:any)=>{
      console.log(res);
     if(res){
+
       delete this.listData[key];
     }
     })
